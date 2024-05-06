@@ -1,0 +1,27 @@
+import pyautogui as pink
+
+# Playing Recording
+for item in Mouse_lst:
+    # Moving to position
+    pink.moveTo(item[0])
+
+    # Mouse Button being pressed
+    if item[1] == 0:
+        pink.click()
+
+    elif item[1] == 00:
+        pink.doubleClick()
+
+    elif item[1] == 2:
+        pink.rightClick()
+
+    # Going through the same time as the mouse position to see when to press a key
+    for key in keys:
+        words = key[0]
+        times = key[1]
+
+        if item[2] == times:
+            if words == "backspace":
+                pink.press(words)
+            else:
+                pink.write(words)
